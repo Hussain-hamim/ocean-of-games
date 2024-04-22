@@ -5,13 +5,20 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          base: `'nav' 'main'`,
-          lg: `'nav nav' 'aside main'`,
+          //object for responsiveness for different devices
+          //we have different breakpoints like:
+          //sm: 30em md: 48em lg: 62em xl: 80 2x: 96em
+
+          base: `'nav' 'main'`, //for moblie
+          lg: `'nav nav' 'aside main'`, //for laptop
         }}
       >
         <GridItem area="nav" bg="coral">
           Nav
         </GridItem>
+        {/* this component will only render when query which is above lg(large screen.
+          so this component wont render on mobile devices.
+        ) */}
         <Show above="lg">
           <GridItem area="aside" bg="gold">
             Aside
