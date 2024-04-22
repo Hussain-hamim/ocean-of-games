@@ -1,11 +1,12 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 import hhamim from "../assets/hhamim.jpg";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
   return (
-    <HStack>
+    <HStack justifyContent="space-between" px="10px">
       <Image src={hhamim} boxSize="60px" />
-      <Text>Navbar</Text>
+      <ColorModeSwitch />
     </HStack>
   );
 };
