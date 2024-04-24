@@ -15,6 +15,10 @@ function App() {
           base: `'nav' 'main'`, //for moblie
           lg: `'nav nav' 'aside main'`, //for laptop
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "200px 1fr",
+        }}
       >
         <GridItem area="nav">
           <NavBar />
@@ -23,7 +27,7 @@ function App() {
           so this component wont render on mobile devices.
         ) */}
         <Show above="lg">
-          <GridItem area="aside">
+          <GridItem area="aside" paddingX={5}>
             <GenreList />
           </GridItem>
         </Show>
