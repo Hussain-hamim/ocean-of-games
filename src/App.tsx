@@ -8,6 +8,7 @@ import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedplatform, setSelectedPlatform] = useState<Genre | null>(null);
 
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
           //we have different breakpoints like:
           //sm: 30em md: 48em lg: 62em xl: 80 2x: 96em
 
-          base: `'nav' 'main'`, //for moblie
+          base: `'nav' 'main'`, //for mobile
           lg: `'nav nav' 'aside main'`, //for laptop
         }}
         templateColumns={{
@@ -40,8 +41,14 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <PlatformSelector />
-          <GameGrid selectedGenre={selectedGenre} />
+          <PlatformSelector
+            selectedPlatform={selectedplatform}
+            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          />
+          <GameGrid
+            selectedPlatform={selectedplatform}
+            selectedGenre={selectedGenre}
+          />
         </GridItem>
       </Grid>
     </>
