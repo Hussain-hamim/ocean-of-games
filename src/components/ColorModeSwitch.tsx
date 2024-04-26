@@ -10,7 +10,7 @@ const ColorModeSwitch = () => {
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       />
-      <Text as="button" onClick={toggleColorMode} whiteSpace="nowrap">
+      <Text onClick={toggleColorMode} as="button" whiteSpace="nowrap">
         Dark Mode
       </Text>
     </HStack>
