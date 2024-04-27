@@ -190,7 +190,7 @@ export default [
   },
   {
     id: 5,
-    name: "Apple Macintosh",
+    name: "Apple Mac",
     slug: "mac",
     platforms: [
       {
@@ -206,7 +206,7 @@ export default [
       },
       {
         id: 55,
-        name: "Classic Macintosh",
+        name: "Classic Mac",
         slug: "macintosh",
         games_count: 674,
         image_background:
@@ -253,7 +253,7 @@ export default [
     platforms: [
       {
         id: 7,
-        name: "Nintendo Switch",
+        name: "Nintendo",
         slug: "nintendo-switch",
         games_count: 5455,
         image_background:
@@ -504,7 +504,7 @@ export default [
   },
   {
     id: 10,
-    name: "Commodore / Amiga",
+    name: "Commd/Amiga",
     slug: "commodore-amiga",
     platforms: [
       {
