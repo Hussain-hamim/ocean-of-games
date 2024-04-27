@@ -11,7 +11,7 @@ const ColorModeSwitch = () => {
         onChange={toggleColorMode}
       />
       <Text onClick={toggleColorMode} as="button" whiteSpace="nowrap">
-        {colorMode === "dark" ? "☀" : "🌃"}
+        {colorMode === "dark" ? "🔆" : "🌛"}
       </Text>
     </HStack>
   );

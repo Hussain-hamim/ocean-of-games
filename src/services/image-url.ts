@@ -1,7 +1,7 @@
-import hamimi from "../assets/hamimi.jpg";
+import brokenImage from "../assets/Broken-images.png";
 
 const getCroppedImageUrl = (url: string) => {
-  if (!url) return hamimi;
+  if (!url) return brokenImage;
   const target = "media/";
   //get the index of the media/ keyword plus it's length to add the intended
   //text after it to crop the image to 600/400. for image optimization.
