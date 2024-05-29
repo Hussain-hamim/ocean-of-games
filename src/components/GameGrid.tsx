@@ -28,7 +28,31 @@ const GameGrid = ({ gameQuery }: Props) => {
   } = useGames(gameQuery);
 
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   if (error) return <Text>{error.message}</Text>;
+
+  /** to add infinite scroll wrap this code on simpleGrid comp below:
+   * 
+   * first the library should be downloaded from: react-infinite-scroll-component
+   * then:
+   *
+   * // total number of item we have fetched so far: 
+   *const fetchedGamesCount =
+    data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
+
+   * 
+   * <InfiniteScroll
+    *  dataLength={fetchedGamesCount}
+    *  hasMore={!!hasNextPage}
+    *  next={() => fetchNextPage()}
+    *  loader={<Spinner />}
+   *
+   * >
+   * //// SimpleGrid comp goes here
+   * </InfiniteScroll>
+   *
+   */
+
   return (
     <Box padding="10px">
       <SimpleGrid
