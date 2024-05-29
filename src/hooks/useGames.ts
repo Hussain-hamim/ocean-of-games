@@ -31,6 +31,8 @@ const useGames = (gameQuery: GameQuery) =>
     },
 
     getNextPageParam: (lastPage, allPages) => {
+      // allPages contain data for each page we have retrieved
+      // return allPages.length + 1; // this compute the number of next page
       return lastPage.next ? allPages.length + 1 : undefined;
     },
     initialPageParam: 1,
