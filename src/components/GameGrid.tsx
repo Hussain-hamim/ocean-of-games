@@ -1,10 +1,17 @@
-import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  SimpleGrid,
+  Skeleton,
+  SkeletonText,
+  Text,
+} from "@chakra-ui/react";
+import React from "react";
+import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "../App";
-import React from "react";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   gameQuery: GameQuery;
@@ -50,10 +57,18 @@ const GameGrid = ({ gameQuery }: Props) => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      {hasNextPage && (
-        <Button onClick={() => fetchNextPage()} marginY={5}>
-          {isFetchingNextPage ? "Loading..." : "Load More"}
-        </Button>
+      {isLoading ? (
+        <Skeleton marginY={5} width="100px" height="35px">
+          <SkeletonText />
+        </Skeleton>
+      ) : (
+        <>
+          {hasNextPage && (
+            <Button onClick={() => fetchNextPage()} marginY={5}>
+              {isFetchingNextPage ? "Loading..." : "Load More"}
+            </Button>
+          )}
+        </>
       )}
     </Box>
   );
