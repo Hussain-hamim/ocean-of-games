@@ -36,6 +36,7 @@ const useGames = (gameQuery: GameQuery) =>
       return lastPage.next ? allPages.length + 1 : undefined;
     },
     initialPageParam: 1,
+    // we can use ms library for calculating time: ms('24h)
     staleTime: 24 * 60 * 60 * 1000, // 24h
   });
 
