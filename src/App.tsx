@@ -6,13 +6,12 @@ import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
-import { Platform } from "./hooks/usePlatforms";
 
 // undefined: the absence of a value
 // null: the intentional absence of a value
 export interface GameQuery {
   genreId?: number;
-  platform: Platform | null;
+  platformId: number;
   sortOrder: string;
   searchText: string;
 }
@@ -62,9 +61,9 @@ function App() {
             <Flex marginBottom={5}>
               <Box paddingRight={3}>
                 <PlatformSelector
-                  selectedPlatform={gameQuery.platform}
+                  selectedPlatformId={gameQuery.platformId}
                   onSelectPlatform={(platform) =>
-                    setGameQuery({ ...gameQuery, platform })
+                    setGameQuery({ ...gameQuery, platformId: platform.id })
                   }
                 />
               </Box>
