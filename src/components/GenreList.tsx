@@ -38,7 +38,7 @@ const GenreList = () => {
                 whiteSpace="normal"
                 textAlign="left"
                 fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
-                color={genre.id === selectedGenreId ? "purple.500" : ""}
+                color={genre.id === selectedGenreId ? "blue.500" : ""}
                 onClick={() => setSelectedGenreId(genre.id)}
                 fontSize="lg"
                 variant="link"

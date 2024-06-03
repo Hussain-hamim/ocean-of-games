@@ -7,17 +7,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = () => {
   const {
     data,
     error,
@@ -25,33 +20,11 @@ const GameGrid = ({ gameQuery }: Props) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
 
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   if (error) return <Text>{error.message}</Text>;
-
-  /** to add infinite scroll wrap this code on simpleGrid comp below:
-   * 
-   * first the library should be downloaded from: react-infinite-scroll-component
-   * then:
-   *
-   * // total number of item we have fetched so far: 
-   *const fetchedGamesCount =
-    data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
-
-   * 
-   * <InfiniteScroll
-    *  dataLength={fetchedGamesCount}
-    *  hasMore={!!hasNextPage}
-    *  next={() => fetchNextPage()}
-    *  loader={<Spinner />}
-   *
-   * >
-   * //// SimpleGrid comp goes here
-   * </InfiniteScroll>
-   *
-   */
 
   return (
     <Box padding="10px">

@@ -32,22 +32,12 @@ function App() {
             <GameHeading />
             <Flex marginBottom={5}>
               <Box paddingRight={3}>
-                <PlatformSelector
-                  selectedPlatformId={gameQuery.platformId}
-                  onSelectPlatform={(platform) =>
-                    setGameQuery({ ...gameQuery, platformId: platform.id })
-                  }
-                />
+                <PlatformSelector />
               </Box>
-              <SortSelector
-                sortOrder={gameQuery.sortOrder}
-                onSelectSortOrder={(sortOrder) =>
-                  setGameQuery({ ...gameQuery, sortOrder })
-                }
-              />
+              <SortSelector />
             </Flex>
           </Box>
-          <GameGrid gameQuery={gameQuery} />
+          <GameGrid />
         </GridItem>
       </Grid>
     </>
