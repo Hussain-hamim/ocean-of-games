@@ -6,6 +6,8 @@ import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
 
 const HomePage = () => {
+  console.log("hello");
+
   return (
     <Grid
       templateAreas={{
