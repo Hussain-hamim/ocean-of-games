@@ -1,4 +1,4 @@
-import { Platform } from "./usePlatforms";
+import { Platform } from "./Platform";
 
 export interface Game {
   id: number;
