@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import { Box } from "@chakra-ui/react";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import HomePage from "./HomePage";
 import GameDetailPage from "./GameDetailPage";
 
