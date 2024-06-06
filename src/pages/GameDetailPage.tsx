@@ -8,11 +8,11 @@ import GameScreenshots from "../components/GameScreenshots";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
-  const { data: game, isLoading, error } = useGame(slug!);
+  const { data: game, isLoading } = useGame(slug!);
 
   if (isLoading) return <Spinner />;
 
-  if (error || !game) throw error;
+  // if (error || !game) throw error;
 
   console.log("hello");
 
