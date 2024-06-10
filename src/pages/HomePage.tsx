@@ -1,4 +1,15 @@
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Show,
+} from "@chakra-ui/react";
 import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
@@ -20,6 +31,31 @@ const HomePage = () => {
           lg: "200px 1fr",
         }}
       >
+        <Show below="lg">
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              <MenuItem icon={<AddIcon />} command="⌘T">
+                New Tab
+              </MenuItem>
+              <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
+                New Window
+              </MenuItem>
+              <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
+                Open Closed Tab
+              </MenuItem>
+              <MenuItem icon={<EditIcon />} command="⌘O">
+                Open File...
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Show>
+
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
             <GenreList />
