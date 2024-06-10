@@ -1,4 +1,7 @@
 import {
+  HamburgerIcon
+} from "@chakra-ui/icons";
+import {
   Box,
   Flex,
   Grid,
@@ -6,23 +9,15 @@ import {
   IconButton,
   Menu,
   MenuButton,
-  MenuItem,
   MenuList,
-  Show,
+  Show
 } from "@chakra-ui/react";
 import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
+import NavBar from "../components/NavBar";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
-import NavBar from "../components/NavBar";
-import {
-  AddIcon,
-  EditIcon,
-  ExternalLinkIcon,
-  HamburgerIcon,
-  RepeatIcon,
-} from "@chakra-ui/icons";
 
 const HomePage = () => {
   return (
