@@ -1,8 +1,14 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+} from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import useGameQueryStore from "../store";
 import { useNavigate } from "react-router-dom";
+import { Kbd } from "@chakra-ui/react";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
@@ -26,6 +32,15 @@ const SearchInput = () => {
           borderRadius={20}
           placeholder="Search games..."
           variant="filled"
+        />
+
+        <InputRightElement
+          children={
+            <span>
+              <Kbd>Ctrl</Kbd>
+              <Kbd marginRight={10}>K</Kbd>
+            </span>
+          }
         />
       </InputGroup>
     </form>
