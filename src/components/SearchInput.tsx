@@ -46,7 +46,7 @@ const SearchInput = () => {
                 <Spinner
                   thickness="2px"
                   speed="0.65s"
-                  emptyColor="yellow.200"
+                  emptyColor="gray.200"
                   color="blue.500"
                   // size="xl"
                 />
